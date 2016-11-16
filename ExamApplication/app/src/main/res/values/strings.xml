@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ExamApplication</string>
+    <string name="edit_text">Add text here</string>
+    <string name="title_activity_another">AnotherActivity</string>
+    <string name="maps">Open maps</string>
+    <string name="browser">Open browser</string>
+    <string name="call">Call</string>
+    <string name="title_activity_fragments">FragmentsActivity</string>
+
+    <string name="hello_blank_fragment_1">Hello fragment 1</string>
+    <string name="hello_blank_fragment_2">Hello fragment 2</string>
+    <string name="title_activity_lists">ListsActivity</string>
+    <string name="title_activity_images">ImagesActivity</string>
+    <declare-styleable name="Gallery1">
+        <attr name="android:galleryItemBackground" />
+    </declare-styleable>
+    <string name="title_activity_menus">MenusActivity</string>
+    <string name="title_activity_shared_pref">SharedPrefActivity</string>
+    <string name="load_pref">Load preferences</string>
+
+
+</resources>

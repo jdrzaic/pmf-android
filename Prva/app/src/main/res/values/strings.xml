@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prva</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="druga">Ovo je druga aktivnost</string>
+    <string name="button">Button</string>
+    <string name="drugi_button">Drugi Button</string>
+    <string name="title_activity_third">ThirdActivity</string>
+</resources>

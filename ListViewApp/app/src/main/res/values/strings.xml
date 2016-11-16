@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ListViewApp</string>
+    <string-array name="kolegiji">
+        <item>Baze podataka</item>
+        <item>Racunarski praktikum</item>
+        <item>Mreze racunala</item>
+        <item>SPA</item>
+        <item>Programiranje</item>
+    </string-array>
+
+</resources>
