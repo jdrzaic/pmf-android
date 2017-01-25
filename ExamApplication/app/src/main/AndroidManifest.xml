@@ -40,6 +40,10 @@
         <activity
             android:name=".SharedPrefActivity"
             android:label="@string/title_activity_shared_pref"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FileActivity"
+            android:label="@string/title_activity_file"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

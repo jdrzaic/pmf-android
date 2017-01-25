@@ -22,7 +22,7 @@ public class DBAdapter {
 
     static final String DATABASE_NAME = "MyDB";
     static final String DATABASE_TABLE = "contacts";
-    static int DATABASE_VERSION = 7;
+    static int DATABASE_VERSION = 8;
 
     static final String CREATE_DATABASE_USER =
             "create table contacts (_id integer primary key autoincrement, "

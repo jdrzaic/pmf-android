@@ -17,6 +17,7 @@
     <string name="title_activity_menus">MenusActivity</string>
     <string name="title_activity_shared_pref">SharedPrefActivity</string>
     <string name="load_pref">Load preferences</string>
+    <string name="title_activity_file">FileActivity</string>
 
 
 </resources>

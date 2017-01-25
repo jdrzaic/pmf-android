@@ -36,4 +36,14 @@ public class MainActivity extends Activity {
         Intent i  = new Intent(this, ImagesActivity.class);
         startActivity(i);
     }
+
+    public void openSharedPrefActivity(View view) {
+        Intent i  = new Intent(this, SharedPrefActivity.class);
+        startActivity(i);
+    }
+
+    public void openFileActivity(View view) {
+        Intent i  = new Intent(this, FileActivity.class);
+        startActivity(i);
+    }
 }

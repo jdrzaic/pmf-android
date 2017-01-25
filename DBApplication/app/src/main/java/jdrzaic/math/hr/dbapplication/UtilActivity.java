@@ -28,7 +28,7 @@ public class UtilActivity extends AppCompatActivity {
     {
         //---PendingIntent to launch activity if the user selects
         // this notification---
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, ContactsActivity.class);
 
         i.putExtra("notificationID", notificationID);
 
@@ -43,14 +43,15 @@ public class UtilActivity extends AppCompatActivity {
 
 
         Notification notif = new Notification.Builder(this)
-                .setTicker("Reminder: meeting starts in 5 minutes")
-                .setContentTitle("Meeting with customer at 3pm...")
-                .setContentText("this is the second row")
+                .setTicker("Open contacts")
+                .setContentTitle("To open contacts click below")
+                .setContentText("contacts will open")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setWhen(System.currentTimeMillis())
                 .setShowWhen(true)
                 .setContentIntent(pendingIntent)
                 .setVibrate(vibrate)
+                .addAction(R.mipmap.ic_launcher, "open", pendingIntent)
                 .build();
 
 

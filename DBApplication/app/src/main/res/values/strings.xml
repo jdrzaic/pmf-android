@@ -2,4 +2,6 @@
     <string name="app_name">DBApplication</string>
     <string name="title_activity_file">FileActivity</string>
     <string name="title_activity_raw_file">RawFileActivity</string>
+    <string name="open_not_activity">Open activity for sending notification</string>
+    <string name="send_notification">Send notification</string>
 </resources>
