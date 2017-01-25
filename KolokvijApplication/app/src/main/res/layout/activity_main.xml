@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,14 +7,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="jdrzaic.math.hr.kolokvijapplication.MainActivity">
+    tools:context="jdrzaic.math.hr.kolokvijapplication.MainActivity"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/open_not_activity"
         android:id="@+id/button"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="104dp"
         android:onClick="onClick" />
-</RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_db_activity"
+        android:layout_marginTop="104dp"
+        android:onClick="onClickDb" />
+</LinearLayout>

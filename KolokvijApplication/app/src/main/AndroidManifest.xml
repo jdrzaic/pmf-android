@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jdrzaic.math.hr.kolokvijapplication">
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
@@ -20,7 +21,8 @@
             android:name=".NotificationActivity"
             android:label="@string/title_activity_notification"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ContactsActivity"></activity>
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".DBActivity"></activity>
     </application>
 
 </manifest>

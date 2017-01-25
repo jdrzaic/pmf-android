@@ -17,18 +17,22 @@ public class DBAdapter {
 
     static final String TAG = "DBAdapterTag";
     static final String KEY_ROWID = "_id";
-    static final String KEY_NAME = "name";
-    static final String KEY_EMAIL = "email";
+    static final String KEY_NAME = "naziv";
+    static final String KEY_TYPE = "vrsta";
+    static final String KEY_MAIN_ING = "glavni_sastojak";
+    static final String KEY_COOKIE_ID = "id_kolaca";
+    static final String KEY_PRICE = "price";
 
     static final String DATABASE_NAME = "MyDB";
-    static final String DATABASE_TABLE = "contacts";
-    static int DATABASE_VERSION = 8;
+    static final String DATABASE_TABLE_COOKIES = "kolaci";
+    static final String DATABASE_TABLE_PRICES = "cijene";
+    static int DATABASE_VERSION = 1;
 
-    static final String CREATE_DATABASE_USER =
-            "create table contacts (_id integer primary key autoincrement, "
-                    + "name text not null, email text not null);";
-    static final String CREATE_DATABASE_POST = "create table post (_id integer primary key autoincrement, "
-            + "user_id integer not null, post_n integer not null);";
+    static final String CREATE_DATABASE_COOKIES =
+            "create table kolaci (_id integer primary key autoincrement, "
+                    + "naziv text not null, vrsta text not null, glavni_sastojak text not null);";
+    static final String CREATE_DATABASE_PRICES = "create table cijene (_id integer primary key autoincrement, "
+            + "id_kolaca integer not null, price integer not null);";
 
     final Context context;
 
@@ -48,8 +52,8 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db) {
             try {
-                db.execSQL(CREATE_DATABASE_USER);
-                db.execSQL(CREATE_DATABASE_POST);
+                db.execSQL(CREATE_DATABASE_COOKIES);
+                db.execSQL(CREATE_DATABASE_PRICES);
             } catch (SQLException ex) {
                 System.out.println(ex.toString());
             }
@@ -59,8 +63,8 @@ public class DBAdapter {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
-            db.execSQL("DROP TABLE IF EXISTS contacts");
-            db.execSQL("DROP TABLE IF EXISTS post");
+            db.execSQL("DROP TABLE IF EXISTS kolaci");
+            db.execSQL("DROP TABLE IF EXISTS cijene");
             onCreate(db);
         }
     }
@@ -80,41 +84,35 @@ public class DBAdapter {
     }
 
     //---insert a contact into the database---
-    public long insertContact(String name, String email)
+    public long insertCookie(String naziv, String vrsta, String glavniSastojak)
     {
         ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_NAME, name);
-        initialValues.put(KEY_EMAIL, email);
-        return db.insert(DATABASE_TABLE, null, initialValues);
+        initialValues.put(KEY_NAME, naziv);
+        initialValues.put(KEY_TYPE, vrsta);
+        initialValues.put(KEY_MAIN_ING, glavniSastojak);
+        return db.insert(DATABASE_TABLE_COOKIES, null, initialValues);
 
     }
 
-    public long insertPost(int post, int userId) {
+    public long insertPrice(int cijena, int idKolaca) {
         ContentValues initialValues = new ContentValues();
-        initialValues.put("post_n", post);
-        initialValues.put("user_id", userId);
-        return db.insert("post", null, initialValues);
+        initialValues.put(KEY_PRICE, cijena);
+        initialValues.put(KEY_COOKIE_ID, idKolaca);
+        return db.insert(DATABASE_TABLE_PRICES, null, initialValues);
     }
 
-    //---deletes a particular contact---
-    public boolean deleteContact(long rowId)
+    public Cursor getAllCookies()
     {
-        return db.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
-    }
-
-    //---retrieves all the contacts---
-    public Cursor getAllContacts()
-    {
-        return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME,
-                KEY_EMAIL}, null, null, null, null, null);
+        return db.query(DATABASE_TABLE_COOKIES, new String[] {KEY_ROWID, KEY_NAME,
+                KEY_TYPE, KEY_MAIN_ING}, null, null, null, null, null);
     }
 
     //---retrieves a particular contact---
-    public Cursor getContact(long rowId) throws SQLException
+    public Cursor getCookiesWithAlmond() throws SQLException
     {
         Cursor mCursor =
-                db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
-                                KEY_NAME, KEY_EMAIL}, KEY_ROWID + "=" + rowId, null,
+                db.query(true, DATABASE_TABLE_COOKIES, new String[] {KEY_ROWID,
+                                KEY_NAME, KEY_TYPE, KEY_MAIN_ING}, KEY_MAIN_ING + " ='badem'", null,
                         null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
@@ -122,26 +120,9 @@ public class DBAdapter {
         return mCursor;
     }
 
-    //---retrieves a particular contact---
-    public Cursor getPost(long rowId) throws SQLException {
-        Cursor mCursor =
-                db.query(true, "post", new String[]{"_id",
-                                "post_n", "user_id"}, KEY_ROWID + "=" + rowId, null,
-                        null, null, null, null);
-        if (mCursor != null) {
-            mCursor.moveToFirst();
-        }
-        return mCursor;
-    }
-
-    //---updates a contact---
-    public boolean updateContact(long rowId, String name, String email)
+    public Cursor getAllPrices()
     {
-        ContentValues args = new ContentValues();
-        args.put(KEY_NAME, name);
-        args.put(KEY_EMAIL, email);
-        return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+        return db.query(DATABASE_TABLE_PRICES, new String[] {KEY_ROWID, KEY_PRICE,
+                KEY_COOKIE_ID}, null, null, null, null, null);
     }
-
-
 }

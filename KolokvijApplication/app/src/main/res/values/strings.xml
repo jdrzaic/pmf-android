@@ -5,4 +5,5 @@
     <string name="title_activity_notification">NotificationActivity</string>
     <string name="open_not_activity">Open activity for sending notification</string>
     <string name="send_notification">Send notification</string>
+    <string name="open_db_activity">Show database content</string>
 </resources>
