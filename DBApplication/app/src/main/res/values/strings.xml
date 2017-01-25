@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DBApplication</string>
+    <string name="title_activity_file">FileActivity</string>
+    <string name="title_activity_raw_file">RawFileActivity</string>
+</resources>
