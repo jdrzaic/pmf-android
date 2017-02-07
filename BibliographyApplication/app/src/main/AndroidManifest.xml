@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="math.jdrzaic.bibliographyapplication">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Bibliography"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddEntityFromBibtexActivity" />
+        <activity
+            android:name=".AddEntityFromData"
+            android:label="@string/add_from_attributes" />
+        <activity
+            android:name=".BibListActivity"
+            android:label="@string/title_activity_bib_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EntitiesListActivity"
+            android:label="@string/title_activity_entities_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddListActivity"
+            android:label="@string/title_activity_add_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditEntityActivity" />
+        <activity android:name=".ShowEntityActivity" />
+        <activity android:name=".ExportEntityActivity"></activity>
+    </application>
+
+</manifest>

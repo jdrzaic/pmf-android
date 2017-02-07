@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BibliographyApplication</string>
+    <string name="title_activity_add_entity">AddEntityActivity</string>
+    <string name="chose_file">Load entities from file</string>
+    <string name="add_from_text">Add entity from BibTeX</string>
+    <string name="author">Authors (comma-separated)</string>
+    <string name="action_settings">Settings</string>
+    <string name="bibtex">BibTeX</string>
+    <string name="add">Add</string>
+    <string name="type">Type</string>
+    <string name="title">Title</string>
+    <string name="journal">Journal</string>
+    <string name="number">Number</string>
+    <string name="pages">Pages</string>
+    <string name="year">Year</string>
+    <string name="link">Link</string>
+    <string name="keywords">Keywords (comma-separated)</string>
+    <string name="title_activity_bib_list">List of Bibliographies</string>
+    <string name="title_activity_entities_list">EntitiesListActivity</string>
+    <string name="search">Search</string>
+    <string name="title_activity_add_list">Add list</string>
+    <string name="name">List name</string>
+    <string name="add_from_attributes">Add entity from attributes</string>
+    <string name="file">File path</string>
+
+    <string name="author_u"><u>Authors</u></string>
+    <string name="type_u"><u>Type</u></string>
+    <string name="title_u"><u>Title</u></string>
+    <string name="journal_u"><u>Journal</u></string>
+    <string name="number_u"><u>Number</u></string>
+    <string name="pages_u"><u>Pages</u></string>
+    <string name="year_u"><u>Year</u></string>
+    <string name="link_u"><u>Link</u></string>
+    <string name="keywords_u"><u>Keywords</u></string>
+    <string name="file_u"><u>File path</u></string>
+</resources>

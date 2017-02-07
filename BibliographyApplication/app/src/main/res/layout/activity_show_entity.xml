@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="math.jdrzaic.bibliographyapplication.EditEntityActivity">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/type_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_type"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/type" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/author_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_author"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/author" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_title"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/journal_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_journal"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/journal" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/number_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_number"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/number" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pages_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_pages"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pages" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/year_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_year"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+
+                android:hint="@string/year" />
+
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/link_u"
+                android:textColor="@color/colorPrimary"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/show_link"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+
+                    android:hint="@string/link" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/file_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_file"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/file" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/keywords_u"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/show_keywords"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/keywords"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
