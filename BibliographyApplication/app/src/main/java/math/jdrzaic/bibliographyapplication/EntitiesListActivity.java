@@ -130,11 +130,11 @@ public class EntitiesListActivity extends AppCompatActivity implements AdapterVi
                 aKeywords.add(cutil.getString(0));
             } while (cutil.moveToNext());
         }
-        cutil = db.getAuthorsForEntity(c.getInt(0));
-        if (cutil.moveToFirst()) {
+        Cursor cutil2 = db.getAuthorsForEntity(c.getInt(0));
+        if (cutil2.moveToFirst()) {
             do {
-                aAuthors.add(cutil.getString(0));
-            } while (cutil.moveToNext());
+                aAuthors.add(cutil2.getString(0));
+            } while (cutil2.moveToNext());
         }
         db.close();
         return new Entity(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),
@@ -269,6 +269,9 @@ public class EntitiesListActivity extends AppCompatActivity implements AdapterVi
             adapter.mEntites = loadEntities();
             entitiesList = adapter.mEntites;
             adapter.notifyItemRangeChanged(0, adapter.getItemCount());
+            if (query.length() > 0) {
+                Toast.makeText(getBaseContext(), "Invalid query", Toast.LENGTH_LONG).show();
+            }
             return;
         }
         String[] parts = query.split(":", 2);
@@ -280,7 +283,6 @@ public class EntitiesListActivity extends AppCompatActivity implements AdapterVi
         entitiesList = adapter.mEntites;
         Log.d(TAG, String.valueOf(entitiesList.size()));
         adapter.notifyDataSetChanged();
-        Log.d(TAG, "here ew");
 
     }
 

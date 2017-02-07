@@ -41,6 +41,7 @@ public class Entity {
 
     public String getAuthors() {
         StringBuilder sb = new StringBuilder();
+
         for (String author : authors) {
             sb.append(author);
             sb.append(", ");

@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_new"
         android:label="Bibliography"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -17,7 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddEntityFromBibtexActivity" />
+        <activity android:name=".AddEntityFromBibtexActivity"
+            android:label="@string/add_from_text"/>
         <activity
             android:name=".AddEntityFromData"
             android:label="@string/add_from_attributes" />
@@ -33,9 +34,11 @@
             android:name=".AddListActivity"
             android:label="@string/title_activity_add_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EditEntityActivity" />
+        <activity android:name=".EditEntityActivity"
+            android:label="Edit entity"/>
         <activity android:name=".ShowEntityActivity" />
-        <activity android:name=".ExportEntityActivity"></activity>
+        <activity android:name=".ExportEntityActivity"
+            android:label="Export to BibTex"/>
     </application>
 
 </manifest>

@@ -111,6 +111,8 @@ public class DBAdapter {
     public long insertEntity(String type, String authors, String title, String journal, int number,
                              String pages, int year, String link, String file, String keywords, int listId ) {
         ContentValues initialValues = new ContentValues();
+        //Log.d(TAG, "Keywords:" + keywords + "\n");
+        //Log.d(TAG, "Authors:" + authors + "\n");
         initialValues.put("type", type);
         initialValues.put("title", title);
         initialValues.put("journal", journal);
@@ -139,12 +141,11 @@ public class DBAdapter {
             if (author.compareTo("") == 0) {
                 continue;
             }
-            initialValues = new ContentValues();
-            initialValues.put("name", author);
-            initialValues.put("entity_id", id);
-            db.insert(DATABASE_TABLE_AUTHOR, null, initialValues);
+            ContentValues initialValues1 = new ContentValues();
+            initialValues1.put("name", author);
+            initialValues1.put("entity_id", id);
+            db.insert(DATABASE_TABLE_AUTHOR, null, initialValues1);
         }
-
         return id;
     }
 
@@ -256,13 +257,13 @@ public class DBAdapter {
         return updated;
     }
 
-    public Cursor getKeywordsForEntity(int entityId) {
+    public Cursor getKeywordsForEntity(long entityId) {
         return db.query(true, DATABASE_TABLE_KEYWORD,
                         new String[] {KEY_NAME},
                         KEY_ENTITY_ID + " = " + entityId, null, null, null, null, null);
     }
 
-    public Cursor getAuthorsForEntity(int entityId) {
+    public Cursor getAuthorsForEntity(long entityId) {
         return db.query(true, DATABASE_TABLE_AUTHOR,
                 new String[] {KEY_NAME},
                 KEY_ENTITY_ID + " = " + entityId, null, null, null, null, null);
