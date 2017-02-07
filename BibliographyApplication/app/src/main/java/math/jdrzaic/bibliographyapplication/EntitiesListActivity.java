@@ -126,19 +126,16 @@ public class EntitiesListActivity extends AppCompatActivity implements AdapterVi
         db.open();
         Cursor cutil = db.getKeywordsForEntity(c.getInt(0));
         if (cutil.moveToFirst()) {
-            for (int i = 0; i< cutil.getColumnCount(); ++i) {
+            do {
                 aKeywords.add(cutil.getString(0));
-                cutil.moveToNext();
-            }
+            } while (cutil.moveToNext());
         }
-        db.close();
-        db.open();
         Cursor cutil2 = db.getAuthorsForEntity(c.getInt(0));
         if (cutil2.moveToFirst()) {
-            for(int i = 0; i < cutil2.getColumnCount(); ++i) {
+            do {
+                Log.d(TAG, "adding author");
                 aAuthors.add(cutil2.getString(0));
-                cutil2.moveToNext();
-            }
+            } while (cutil2.moveToNext());
         }
         db.close();
         return new Entity(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),

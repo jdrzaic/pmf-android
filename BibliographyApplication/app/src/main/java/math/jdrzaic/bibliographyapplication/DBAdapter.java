@@ -33,8 +33,8 @@ public class DBAdapter {
     static final String DATABASE_TABLE_LIST = "list";
     static final String DATABASE_TABLE_ENTITY = "entity";
     static final String DATABASE_TABLE_KEYWORD = "keyword";
-    static final String DATABASE_TABLE_AUTHOR = "keyword";
-    static int DATABASE_VERSION = 4;
+    static final String DATABASE_TABLE_AUTHOR = "author";
+    static int DATABASE_VERSION = 5;
 
     static final String CREATE_TABLE_LIST =
             "create table list (_id integer primary key autoincrement, "
@@ -111,8 +111,6 @@ public class DBAdapter {
     public long insertEntity(String type, String authors, String title, String journal, int number,
                              String pages, int year, String link, String file, String keywords, int listId ) {
         ContentValues initialValues = new ContentValues();
-        //Log.d(TAG, "Keywords:" + keywords + "\n");
-        //Log.d(TAG, "Authors:" + authors + "\n");
         initialValues.put("type", type);
         initialValues.put("title", title);
         initialValues.put("journal", journal);
@@ -146,6 +144,7 @@ public class DBAdapter {
             initialValues1.put("entity_id", id);
             db.insert(DATABASE_TABLE_AUTHOR, null, initialValues1);
         }
+        Cursor cu = getAuthorsForEntity(id);
         return id;
     }
 
